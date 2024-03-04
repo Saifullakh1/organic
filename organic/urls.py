@@ -19,10 +19,20 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+
+api_urlpatterns = [
+    path('', include('apps.products.api.urls')),
+    path('', include('apps.blogs.api.urls'))
+]
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.products.urls')),
-    path('', include('apps.blogs.urls'))
+    path('', include('apps.blogs.urls')),
+
+
+    path('api/', include(api_urlpatterns))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
