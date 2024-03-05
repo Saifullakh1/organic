@@ -22,7 +22,8 @@ from django.conf import settings
 
 api_urlpatterns = [
     path('', include('apps.products.api.urls')),
-    path('', include('apps.blogs.api.urls'))
+    path('', include('apps.blogs.api.urls')),
+    path('', include('apps.users.api.urls'))
 ]
 
 
