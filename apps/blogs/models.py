@@ -1,4 +1,5 @@
 from django.db import models
+from apps.users.models import User
 
 
 class Blog(models.Model):
@@ -16,6 +17,10 @@ class Blog(models.Model):
     )
     is_active = models.BooleanField(
         default=True
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="user_blogs"
     )
 
     class Meta:

@@ -7,5 +7,5 @@ class BlogSerializer(serializers.ModelSerializer):
         model = Blog
         fields = (
             "id", "title", "description",
-            "image", "created_at", "is_active"
+            "image", "created_at", "is_active", "user"
         )
